@@ -5,6 +5,7 @@ term.clear()
 term.setCursorPos(1, 1)
 term.setTextColor( colors.white )
 
+warn("Please run the update script on first installation of GoonOS")
 print("Welcome to GoonOS, here is a quick list of commands:")
 
 term.setTextColor( colors.green )
@@ -20,7 +21,6 @@ print("")
 print("anything else - allows you to use the computer normally")
 print("")
 
-term.setTextColor( colors.gold )
 input = read()
 
 if input == "engine" then
