@@ -2,7 +2,7 @@
 -- Written by Tucanu
 
 function download(path, url)
-    print("Downloading n: " .. path)
+    print("Downloading : " .. path "from" .. url)
     data = http.get(url).readAll()
     file = assert(io.open(path, "w"))
     file:write(data)
