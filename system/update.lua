@@ -25,7 +25,7 @@ if input == "y" then
     if (fs.exists("installer")) then
         fs.delete("installer")
     end
-    download("/installer", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/installer.lua")
+    download("/installer", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/system/installer.lua")
     os.run({}, "/installer")
 else
     os.run({}, "/GoonOS/menu")
