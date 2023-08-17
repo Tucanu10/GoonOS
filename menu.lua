@@ -11,5 +11,5 @@ term.print("If you wish to start / stop type 'ready' ")
 local input = os.read()
 
 if input == "ready" then
-    os.run("{}, /GoonOS/engine")
+    os.run({}, "/GoonOS/engine")
 end

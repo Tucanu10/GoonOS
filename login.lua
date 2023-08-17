@@ -31,4 +31,4 @@ sleep(2)
 os.reboot()
 end
 
-os.run("{}, /GoonOS/menu")
+os.run({}, "/GoonOS/menu")
