@@ -21,7 +21,7 @@ if input == "y" then
         fs.delete("startup")
     end
 
-    download("/installer", "https://pastebin.com/t014szG3")
+    download("/installer", "https://pastebin.com/raw/aDGBL1nn")
 else
     os.run({}, "/GoonOS/menu")
 end

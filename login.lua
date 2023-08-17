@@ -22,13 +22,13 @@ for i=1, #username do -- Starts a loop
 end
 
 if access == true then
-print("Logging in...")
-sleep(1)
-print("Welcome "..user)
+  print("Logging in...")
+  sleep(1)
+  print("Welcome "..user)
 else
-print("Incorrect username and password combination")
-sleep(2)
-os.reboot()
+  print("Incorrect username and password combination")
+  sleep(2)
+  os.reboot()
 end
 
 os.run({}, "/GoonOS/menu")
