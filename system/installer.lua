@@ -36,7 +36,7 @@ download("/GoonOS/engine", "https://raw.githubusercontent.com/Tucanu10/GoonOS/ma
 download("/startup", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/programs/login.lua")
 
 -- GoonOS Updater
-download("/GoonOS/update", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/system/pdate.lua")
+download("/GoonOS/update", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/system/update.lua")
 
 -- GoonOS Uninstaller
 download("/GoonOS/uninstall", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/system/uninstall.lua")
