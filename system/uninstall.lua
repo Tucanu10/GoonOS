@@ -8,7 +8,7 @@ term.setTextColor( colors.yellow)
 input = read()
 print("")
 if input == "y" then
-    term.setTextColor( colors.write)
+    term.setTextColor( colors.white)
     write("Uninstalling GoonOS")
     for i = 1, 3, 1 do
         sleep(1)
