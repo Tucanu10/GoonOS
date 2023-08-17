@@ -19,7 +19,7 @@ if input == "y" then
     if(fs.exists("startup"))then
         fs.delete("startup")
     end
-
+    print("")
     print("Uninstall complete")
     sleep(1)
     print("Rebooting")
