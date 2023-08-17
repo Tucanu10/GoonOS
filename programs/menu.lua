@@ -13,13 +13,15 @@ print("")
 term.setTextColor( colors.green )
 
 print("engine - maintains a redstone signal on prefered side of the computer")
-print("")
 print("goodbye - shuts down the computer")
-print("")
 print("update - updates GoonOS")
+<<<<<<< Updated upstream
 print("")
 print("uninstall - uninstalls GoonOS")
 print("")
+=======
+print("uninstall - gets rid of GoonOS")
+>>>>>>> Stashed changes
 print("press enter - allows you to use the computer normally")
 print("")
 

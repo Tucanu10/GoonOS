@@ -3,7 +3,7 @@
 
 function log(time, path)
     file = assert(io.open(path, "a"))
-    file:write(time, data)
+    file:write(time)
     file:close()
 end
 
@@ -17,10 +17,12 @@ print("Engine commands :")
 print("")
 term.setTextColor( colors.lime )
 print("log - see the engine's activity")
-print("")
 print("press enter - start / stop the engine")
+print("")
 
 input = read()
+
+term.setTextColor( colors.white)
 
 if input ~= "log" then
     if status == false then

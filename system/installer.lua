@@ -2,11 +2,6 @@
 -- Written by Tucanu
 term.setTextColor( colors.lime)
 
-if not term.isColor then
-    print("Your computer cannot handle GoonOS, please upgrade to an advanced one")
-    error()
-end
-
 function download(path, url)
     print("Downloading : " .. path)
     data = http.get(url).readAll()
