@@ -44,6 +44,6 @@ sleep(1)
 print("Restarting...")
 
 sleep(1)
-os.reboot()
+os.run({}, "/startup")
 
 -- link towards pastebin : https://pastebin.com/ujQkMCwQ
