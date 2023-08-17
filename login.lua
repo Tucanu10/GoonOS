@@ -6,8 +6,8 @@ os.pullEvent = os.pullEventRaw
 term.clear()
 term.setCursorPos(1, 1)
 
-username = {"Tucanu", "BeanMan", "Hoshi"}
-password = {"admin", "1234", "ilovemaids"}
+username = {"user1", "user2", "user3"}
+password = {"", "", ""}
 
 write("Username: ")
 user = read()
@@ -31,4 +31,4 @@ sleep(2)
 os.reboot()
 end
 
-os.run("/TucanuOS/menu")
+os.run("/GoonOS/menu")
