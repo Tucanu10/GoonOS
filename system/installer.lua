@@ -27,19 +27,19 @@ end
 fs.makeDir("/GoonOS")
 
 -- Main Menu
-download("/GoonOS/menu", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/menu.lua")
+download("/GoonOS/menu", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/programs/menu.lua")
 
 -- Engine Startup
-download("/GoonOS/engine", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/engine.lua")
+download("/GoonOS/engine", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/programs/engine.lua")
 
 -- Login Screen
-download("/startup", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/login.lua")
+download("/startup", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/programs/login.lua")
 
 -- GoonOS Updater
-download("/GoonOS/update", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/update.lua")
+download("/GoonOS/update", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/system/pdate.lua")
 
 -- GoonOS Uninstaller
-download("/GoonOS/uninstall", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/uninstall.lua")
+download("/GoonOS/uninstall", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/system/uninstall.lua")
 
 term.setTextColor(colors.green)
 print("GoonOS succesfully installed!")
