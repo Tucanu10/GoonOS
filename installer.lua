@@ -39,7 +39,7 @@ download("/startup", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/log
 download("/GoonOS/update", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/update.lua")
 
 -- GoonOS Uninstaller
-download("/GoonOS/update", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/uninstall.lua")
+download("/GoonOS/uninstall", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/uninstall.lua")
 
 term.setTextColor(colors.green)
 print("GoonOS succesfully installed!")
