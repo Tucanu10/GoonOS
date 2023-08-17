@@ -4,6 +4,7 @@
 status = rs.getOutput("back") --Change to appropiate side of computer
 
 term.clear()
+term.setCursorPos(1, 1)
 
 if status == true then
     print("Stopping the engine")
