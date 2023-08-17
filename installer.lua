@@ -7,7 +7,7 @@ if not term.isColor then
 end
 
 function download(path, url)
-    print("Downloading n: " .. path)
+    print("Downloading : " .. path)
     data = http.get(url).readAll()
     file = assert(io.open(path, "w"))
     file:write(data)
