@@ -28,6 +28,8 @@ else
     print("The engine has stopped")
 end
 
+term.setTextColor( colors.yellow )
+
 print("Returning to menu")
 sleep(5)
 os.run({}, "/GoonOS/menu")
