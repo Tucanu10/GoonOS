@@ -6,12 +6,6 @@ os.pullEvent = os.pullEventRaw
 term.clear()
 term.setCursorPos(1, 1)
 
-print("Updating your software, please stand by")
-os.run({}, "/GoonOS/update")
-
-term.clear()
-term.setCursorPos(1, 1)
-
 username = {"admin", "user2", "user3"}
 password = {"admin", "", ""}
 

@@ -38,12 +38,15 @@ download("/startup", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/log
 -- GoonOS Updater
 download("/GoonOS/update", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/update.lua")
 
+-- GoonOS Uninstaller
+download("/GoonOS/update", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/uninstall.lua")
+
 term.setTextColor(colors.green)
 print("GoonOS succesfully installed!")
 sleep(1)
 print("Restarting...")
 
 sleep(1)
-os.run({}, "/startup")
+os.reboot()
 
 -- link towards pastebin : https://pastebin.com/ujQkMCwQ
