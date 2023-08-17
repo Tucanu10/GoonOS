@@ -1,6 +1,11 @@
 -- File Installer
 -- Written by Tucanu
 
+if not term.isColor then
+    print("Your computer cannot handle GoonOS, please upgrade to an advanced one")
+    error()
+end
+
 function download(path, url)
     print("Downloading n: " .. path)
     data = http.get(url).readAll()
@@ -41,4 +46,4 @@ print("Restarting...")
 sleep(1)
 os.reboot()
 
--- link towards pastebin : https://pastebin.com/aDGBL1nn
+-- link towards pastebin : https://pastebin.com/ujQkMCwQ
