@@ -2,8 +2,10 @@ term.clear()
 term.setCursorPos(1, 1)
 term.setTextColor( colors.red )
 
-if input == "y" then
+print("Do you wish to uninstall GoonOS? y/n")
 
+input = read()
+if input == "y" then
     write("Uninstalling GoonOS")
     for i = 1, 3, 1 do
         sleep(1)
