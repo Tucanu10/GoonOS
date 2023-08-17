@@ -18,9 +18,8 @@ print("")
 print("uninstall - gets rid of GoonOS")
 print("")
 print("anything else - allows you to use the computer normally")
+print("")
 
-
-term.setCursorPos(term.getCursorPos() + 2, 1)
 term.setTextColor( colors.gold )
 input = read()
 
