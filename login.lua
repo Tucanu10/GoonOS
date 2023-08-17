@@ -5,6 +5,7 @@ os.pullEvent = os.pullEventRaw
 
 term.clear()
 term.setCursorPos(1, 1)
+term.setTextColor( colors.white )
 
 username = {"admin", "user2", "user3"}
 password = {"admin", "", ""}
