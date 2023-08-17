@@ -1,17 +1,25 @@
 -- Computer Menu
 -- Written by Tucanu
 
-status = rs.getOutput("back") --Change to appropiate side of computer
-
 term.clear()
 term.setCursorPos(1, 1)
+term.setTextColor( colors.white )
 
-print("If you wish to start / stop the engine type 'Ready'.")
-
-input = read()
+print("Welcome to GoonOS, here is a quick list of commands:")
 
 term.setTextColor( colors.green )
 
-if input == "Ready" then
+print("engine - maintains a redstone signal on prefered side of the computer")
+print("goodbye - shuts down the computer")
+
+input = read()
+
+term.setTextColor( colors.white )
+
+if input == "engine" then
     os.run({}, "/GoonOS/engine")
+end
+
+if input == "goodbye" then
+    os.shutdown()
 end
