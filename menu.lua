@@ -6,9 +6,9 @@ status = rs.getOutput("back") --Change to appropiate side of computer
 term.clear()
 term.setCursorPos(1, 1)
 
-term.print("If you wish to start / stop type 'Ready'.")
+print("If you wish to start / stop type 'Ready'.")
 
-input = os.read()
+input = read()
 
 term.setTextColor(colors.green)
 
