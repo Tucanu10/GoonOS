@@ -10,5 +10,5 @@ term.print("If you wish to start / stop type 'amogus' ")
 local input = os.read()
 
 if input == "amogus" then
-    os.run("/TucanuOS/engine")
+    os.run("/GoonOS/engine")
 end
