@@ -6,8 +6,8 @@ os.pullEvent = os.pullEventRaw
 term.clear()
 term.setCursorPos(1, 1)
 
-username = {"user1", "user2", "user3"}
-password = {"", "", ""}
+username = {"admin", "user2", "user3"}
+password = {"admin", "", ""}
 
 write("Username: ")
 user = read()
