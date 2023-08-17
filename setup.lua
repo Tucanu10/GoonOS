@@ -19,19 +19,19 @@ if(fs.exists("startup"))then
     fs.delete("startup")
 end
 
-fs.makeDir("/TucanuOS")
+fs.makeDir("/GoonOS")
 
 -- Main Menu
-download("/TucanuOS/menu", "https://pastebin.com/raw/VfyGMjUp")
+download("/GoonOS/menu", "https://pastebin.com/raw/VfyGMjUp")
 
 -- Engine Startup
-download("/TucanuOS/engine", "https://pastebin.com/raw/gk3QLcWH")
+download("/GoonOS/engine", "https://pastebin.com/raw/gk3QLcWH")
 
 -- Login Screen
 download("/startup", "https://pastebin.com/raw/T4vz5n3m")
 
 term.setTextColor(colors.green)
-print("TucanuOS succesfully installed!")
+print("GoonOS succesfully installed!")
 sleep(1)
 print("Restarting...")
 
