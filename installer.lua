@@ -1,4 +1,4 @@
--- Windows like Installer
+-- File Installer
 -- Written by Tucanu
 
 function download(path, url)
