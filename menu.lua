@@ -15,7 +15,8 @@ print("goodbye - shuts down the computer")
 print("")
 print("anything else - allows you to use the computer for other things")
 
-term.setCursorPos(getCursorPos + 2, 1)
+
+term.setCursorPos(term.getCursorPos() + 2, 1)
 term.setTextColor( colors.gold )
 input = read()
 
