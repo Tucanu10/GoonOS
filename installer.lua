@@ -49,4 +49,4 @@ print("Restarting...")
 sleep(1)
 os.reboot()
 
--- link towards pastebin : https://pastebin.com/ujQkMCwQ
+-- link towards pastebin : https://pastebin.com/b0PxesFG
