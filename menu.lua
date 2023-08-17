@@ -13,7 +13,11 @@ print("engine - maintains a redstone signal on prefered side of the computer")
 print("")
 print("goodbye - shuts down the computer")
 print("")
-print("anything else - allows you to use the computer for other things")
+print("update - updates GoonOS")
+print("")
+print("uninstall - gets rid of GoonOS")
+print("")
+print("anything else - allows you to use the computer normally")
 
 
 term.setCursorPos(term.getCursorPos() + 2, 1)
@@ -22,14 +26,10 @@ input = read()
 
 if input == "engine" then
     os.run({}, "/GoonOS/engine")
-end
-
-if input == "goodbye" then
+elseif input == "goodbye" then
     os.shutdown()
-end
-
-if input ~= "engine" or input ~= "goodbye" then
-    term.clear()
-    term.setCursorPos(1, 1)
-    term.setTextColor( colors.white )
+elseif input == "update" then
+    os.run({}, "/GoonOS/update")
+elseif input == "uninstall" then
+    os.run({}, "/GoonOS/uninstall")
 end
