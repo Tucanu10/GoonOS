@@ -37,3 +37,5 @@ print("Restarting...")
 
 sleep(1)
 os.reboot()
+
+-- link towards pastebin : https://pastebin.com/pcZanDcd
