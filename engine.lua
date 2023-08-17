@@ -1,7 +1,7 @@
 -- Engine starting / stopping script
 -- Written by Tucanu
 
-local status = rs.getOutput("back") --Change to appropiate side of computer
+status = rs.getOutput("back") --Change to appropiate side of computer
 
 term.clear()
 

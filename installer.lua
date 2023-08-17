@@ -9,10 +9,10 @@ function download(path, url)
     file:close()
 end
 
--- Clear computer of old version of TucanuOS
+-- Clear computer of old version of GoonOS
 
-if(fs.exists("/TucanuOS"))then
-    fs.delete("/TucanuOS")
+if(fs.exists("/GoonOS"))then
+    fs.delete("/GoonOS")
 end
 
 if(fs.exists("startup"))then
