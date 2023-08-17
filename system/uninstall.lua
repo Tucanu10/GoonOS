@@ -1,14 +1,13 @@
 term.clear()
 term.setCursorPos(1, 1)
-term.setTextColor( colors.red )
+term.setTextColor( colors.white )
 
 print("Do you wish to uninstall GoonOS? y/n")
 
-term.setTextColor( colors.yellow)
 input = read()
-print("")
 if input == "y" then
-    term.setTextColor( colors.white)
+    print("")
+    term.setTextColor( colors.red)
     write("Uninstalling GoonOS")
     for i = 1, 3, 1 do
         sleep(1)
@@ -23,6 +22,7 @@ if input == "y" then
         fs.delete("startup")
     end
     print("")
+    term.setTextColor( colors.lime)
     print("Uninstall complete.")
     sleep(1)
     print("Rebooting.")

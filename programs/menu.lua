@@ -20,10 +20,10 @@ print("update - updates GoonOS")
 print("")
 print("uninstall - gets rid of GoonOS")
 print("")
-print("anything else - allows you to use the computer normally")
+print("press enter - allows you to use the computer normally")
 print("")
 
-term.setTextColor( colors.white )
+term.setTextColor( colors.yellow )
 write("> ")
 input = read()
 
