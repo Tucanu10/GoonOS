@@ -30,6 +30,9 @@ download("/GoonOS/engine", "https://raw.githubusercontent.com/Tucanu10/GoonOS/ma
 -- Login Screen
 download("/startup", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/login.lua")
 
+-- GoonOS Updater
+download("/GoonOS/update", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/update.lua")
+
 term.setTextColor(colors.green)
 print("GoonOS succesfully installed!")
 sleep(1)

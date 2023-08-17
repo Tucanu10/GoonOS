@@ -1,15 +1,17 @@
 -- Computer Menu
 -- Written by Tucanu
 
-local status = rs.getOutput("back") --Change to appropiate side of computer
+status = rs.getOutput("back") --Change to appropiate side of computer
 
 term.clear()
 term.setCursorPos(1, 1)
 
-term.print("If you wish to start / stop type 'ready' ")
+term.print("If you wish to start / stop type 'Ready'.")
 
-local input = os.read()
+input = os.read()
 
-if input == "ready" then
+term.setTextColor(colors.green)
+
+if input == "Ready" then
     os.run({}, "/GoonOS/engine")
 end
