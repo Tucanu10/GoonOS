@@ -34,7 +34,7 @@ write("> ")
 term.setTextColor( colors.white )
 input = read()
 
-if input ~= "log" or input ~="dellog" then
+if input == "" then
     if status == false then
         print("Stopping the engine")
     else
@@ -57,7 +57,7 @@ if input ~= "log" or input ~="dellog" then
         print("The engine has started!")
     end
 
-elseif input ~= "dellog" then
+elseif input == "log" then
     term.clear()
     term.setCursorPos(1, 1)
     term.setTextColor( colors.white )
