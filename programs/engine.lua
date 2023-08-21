@@ -1,12 +1,12 @@
 -- Engine starting / stopping script
 -- Written by Tucanu
 
-if not fs.exists("/GoonOS/logs.txt") then
-    fs.makeDir("/GoonOS/logs.txt")
+if not fs.exists("/GoonOS/logs") then
+    fs.makeDir("/GoonOS/logs")
 end
 
 function log(time, status)
-    file = assert(io.open("/GoonOS/logs.txt", "a"))
+    file = assert(io.open("/GoonOS/logs", "a"))
     file:write(time .. "- Engine turned was on :" .. not status)
     file:close()
 end
