@@ -68,7 +68,7 @@ elseif input == "log" then
 
 else
     print("Logs have been deleted")
-    os.run("delete /GoonOS/logs.txt")
+    shell.run("delete /GoonOS/logs.txt")
 end
 
 term.setTextColor( colors.yellow )
@@ -82,8 +82,6 @@ while true do
         print("Returning to menu")
         sleep(5)
         os.run({}, "/GoonOS/menu")
-        break
-
     else
         os.run({}, "/GoonOS/engine")
         break
