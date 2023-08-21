@@ -32,9 +32,10 @@ if access == true then
   sleep(1)
   write("Welcome, ")
   term.setTextColor( colors.lime )
-  writeLine(user)
+  write(user)
   sleep(2)
 else
+  term.setTextColor( colors.red )
   print("Incorrect username and password combination")
   sleep(2)
   os.reboot()
