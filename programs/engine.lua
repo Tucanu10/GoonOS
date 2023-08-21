@@ -59,13 +59,13 @@ else
     term.setCursorPos(1, 1)
     term.setTextColor( colors.white )
 
-    data = fs.open("/GoonOS/logs.txt")
+    data = assert(io.open("/GoonOS/logs.txt", "r"))
     textutils.slowPrint(data)
 
     print("")
     print("To return to the menu press 'enter'")
     while true do
-        key = os.pullEvent("key_up")
+        event, key = os.pullEvent("key_up")
         name = keys.getName(key) or "unknown key"
         if name == "enter" then
             print("Returning to menu")
@@ -73,10 +73,5 @@ else
             os.run({}, "/GoonOS/menu")
         end
     end
-    
-    
-    print("Returning to menu")
-            sleep(5)
-            os.run({}, "/GoonOS/menu")
 end
     
