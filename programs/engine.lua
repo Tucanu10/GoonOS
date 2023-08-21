@@ -2,13 +2,13 @@
 -- Written by Tucanu
 
 function log(time, status)
-    file = assert(io.open("/GoonOS/logs.txt", "w"))
+    file = assert(io.open("/GoonOS/logs.txt", "a+"))
     if status == true then
         engineStatus = "true"
     else
         engineStatus = "false"
     end
-    file:write(time .. "- Engine turned was on: " .. engineStatus)
+    file:write(time .. " - Engine turned was on: " .. engineStatus)
     file:close()
 end
 
@@ -64,20 +64,18 @@ else
     file = assert(io.open("/GoonOS/logs.txt", "r"))
     data = file:read()
     textutils.slowPrint(data)
-
-    
 end
 
+print("")
+print("To return to the menu press 'm'")
 while true do
     event, key = os.pullEvent("key_up")
     name = keys.getName(key) or "unknown key"
     if name == "m" then
+        term.setTextColor( colors.yellow )
         print("Returning to menu")
         sleep(5)
         os.run({}, "/GoonOS/menu")
         break
     end
 end
-
-print("")
-print("To return to the menu press 'm'")
