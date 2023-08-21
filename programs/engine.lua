@@ -1,6 +1,16 @@
 -- Engine starting / stopping script
 -- Written by Tucanu
 
+if not fs.exists("/GoonOS/logs.txt") then
+    fs.makeDir("/GoonOS/logs.txt")
+end
+
+function log(time, status)
+    file = fs.open("/GoonOS/logs.txt", "a")
+    file.writeLine(time .. "- Engine turned was on :" .. not status)
+    file.close()
+end
+
 status = rs.getOutput("back") --Change to appropiate side of computer
 
 term.clear()
@@ -14,9 +24,10 @@ print("log - see the engine's activity")
 print("press enter - start / stop the engine")
 print("")
 
+term.setTextColor( colors.white )
+
 input = read()
 
-term.setTextColor( colors.white)
 
 if input ~= "log" then
     if status == false then
@@ -42,11 +53,11 @@ if input ~= "log" then
 
     term.setTextColor( colors.yellow )
 
+else
+    log(textutils.formatTime(os.time(ingame)), rs.getOutput("back"))
+
     print("Returning to menu")
     sleep(5)
     os.run({}, "/GoonOS/menu")
-
-else
-    log(textutils.formatTime(os.time(ingame)), rs.getOutput("back"))
 end
     
