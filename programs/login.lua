@@ -26,6 +26,7 @@ if access == true then
   print("Logging in...")
   sleep(1)
   print("Welcome "..user)
+  sleep(2)
 else
   print("Incorrect username and password combination")
   sleep(2)
