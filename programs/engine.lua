@@ -28,8 +28,10 @@ print("log - see the engine's activity")
 print("press enter - start / stop the engine")
 print("")
 
-term.setTextColor( colors.white )
+term.setTextColor( colors.yellow )
+write("> ")
 
+term.setTextColor( colors.white )
 input = read()
 
 if input ~= "log" then
