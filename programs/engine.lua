@@ -12,7 +12,9 @@ function log(time, status)
     file:close()
 end
 
- status = rs.getOutput("back") --Change to appropiate side of computer
+
+
+status = rs.getOutput("back") --Change to appropiate side of computer
 
 term.clear()
 term.setCursorPos(1, 1)
@@ -59,19 +61,23 @@ else
     term.setCursorPos(1, 1)
     term.setTextColor( colors.white )
 
-    data = assert(io.open("/GoonOS/logs.txt", "r"))
+    file = assert(io.open("/GoonOS/logs.txt", "r"))
+    data = file:read()
     textutils.slowPrint(data)
 
-    print("")
-    print("To return to the menu press 'enter'")
-    while true do
-        event, key = os.pullEvent("key_up")
-        name = keys.getName(key) or "unknown key"
-        if name == "enter" then
-            print("Returning to menu")
-            sleep(5)
-            os.run({}, "/GoonOS/menu")
-        end
+    
+end
+
+while true do
+    event, key = os.pullEvent("key_up")
+    name = keys.getName(key) or "unknown key"
+    if name == "m" then
+        print("Returning to menu")
+        sleep(5)
+        os.run({}, "/GoonOS/menu")
+        break
     end
 end
-    
+
+print("")
+print("To return to the menu press 'm'")
