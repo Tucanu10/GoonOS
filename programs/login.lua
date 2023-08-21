@@ -16,7 +16,7 @@ user = read()
 write("Password: ")
 pass = read('*')
 
-for i=1, #username do -- Starts a loop
+for i=1, #username do
  if user == username[i] and pass == password[i] then
    access = true
  end
