@@ -9,6 +9,7 @@ function log(time, status)
         engineStatus = "false"
     end
     file:write(time .. " - Engine turned was on: " .. engineStatus)
+    file:seek("cur", 1)
     file:close()
 end
 
@@ -67,7 +68,7 @@ else
 end
 
 print("")
-print("To return to the menu press 'm'")
+print("To return to the menu press 'm' or continue inputting by pressing enter")
 while true do
     event, key = os.pullEvent("key_up")
     name = keys.getName(key) or "unknown key"
@@ -76,6 +77,11 @@ while true do
         print("Returning to menu")
         sleep(5)
         os.run({}, "/GoonOS/menu")
+        break
+
+    elseif name == "enter" then
+        term.setTextColor( colors.white )
+        input = read()
         break
     end
 end
