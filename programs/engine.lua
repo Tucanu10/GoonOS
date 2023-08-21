@@ -7,7 +7,7 @@ end
 
 function log(time, status)
     file = fs.open("/GoonOS/logs.txt", "a")
-    file.writeLine(time .. "- Engine turned was on :" .. not status)
+    file.write(time .. "- Engine turned was on :" .. not status)
     file.close()
 end
 
