@@ -34,7 +34,7 @@ write("> ")
 term.setTextColor( colors.white )
 input = read()
 
-if input ~= "log" then
+if input ~= "log" or input ~="dellog" then
     if status == false then
         print("Stopping the engine")
     else
@@ -57,9 +57,7 @@ if input ~= "log" then
         print("The engine has started!")
     end
 
-    term.setTextColor( colors.yellow )
-
-elseif input ~= "dellogs" then
+elseif input ~= "dellog" then
     term.clear()
     term.setCursorPos(1, 1)
     term.setTextColor( colors.white )
@@ -67,11 +65,13 @@ elseif input ~= "dellogs" then
     file = assert(io.open("/GoonOS/logs.txt", "r"))
     data = file:read()
     textutils.slowPrint(data)
+
 else
     print("Logs have been deleted")
     os.run("delete /GoonOS/logs.txt")
 end
 
+term.setTextColor( colors.yellow )
 print("")
 print("To return to the menu press 'enter' or continue inputting by pressing any other key")
 while true do
