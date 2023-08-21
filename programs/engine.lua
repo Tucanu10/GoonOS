@@ -2,7 +2,7 @@
 -- Written by Tucanu
 
 function log(time, status)
-    file = assert(io.open("/GoonOS/logs.txt", "a"))
+    file = assert(io.open("/GoonOS/logs.txt", "w"))
     if status == true then
         engineStatus = "true"
     else
