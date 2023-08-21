@@ -25,8 +25,9 @@ fs.makeDir("/GoonOS")
 -- Main Menu
 download("/GoonOS/menu", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/programs/menu.lua")
 
--- Engine Startup
+-- Engine Startup & Logger
 download("/GoonOS/engine", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/programs/engine.lua")
+download("GoonOS/logger", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/programs/logger.lua")
 
 -- Login Screen
 download("/startup", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/programs/login.lua")
