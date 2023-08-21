@@ -75,13 +75,14 @@ term.setTextColor( colors.yellow )
 print("")
 print("To return to the menu press 'enter' or continue inputting by pressing any other key")
 while true do
-    event, key = os.pullEvent("key_up")
+    event, key = os.pullEvent("key")
     name = keys.getName(key) or "unknown key"
     if name == "enter" then
         term.setTextColor( colors.yellow )
         print("Returning to menu")
         sleep(5)
         os.run({}, "/GoonOS/menu")
+        break
     else
         os.run({}, "/GoonOS/engine")
         break
