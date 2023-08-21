@@ -1,12 +1,6 @@
 -- Engine starting / stopping script
 -- Written by Tucanu
 
-function log(time, path)
-    file = assert(io.open(path, "a"))
-    file:write(time)
-    file:close()
-end
-
 status = rs.getOutput("back") --Change to appropiate side of computer
 
 term.clear()
@@ -53,6 +47,6 @@ if input ~= "log" then
     os.run({}, "/GoonOS/menu")
 
 else
-    log(textutils.formatTime(os.time(ingame), true), "/GoonOS/logs.txt")
+    log(textutils.formatTime(os.time(ingame)), rs.getOutput("back"))
 end
     
