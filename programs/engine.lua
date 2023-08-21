@@ -9,7 +9,6 @@ function log(time, status)
         engineStatus = "false"
     end
     file:write(time .. " - Engine was turned on: " .. engineStatus .. "\n")
-    file.newline()
     file:close()
 end
 
