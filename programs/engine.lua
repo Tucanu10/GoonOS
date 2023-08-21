@@ -80,7 +80,6 @@ while true do
         break
 
     elseif name == "enter" then
-        term.setTextColor( colors.white )
         os.run({}, "/GoonOS/engine")
         break
     end
