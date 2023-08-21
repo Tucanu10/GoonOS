@@ -3,11 +3,16 @@
 
 function log(time, status)
     file = assert(io.open("/GoonOS/logs.txt", "a"))
-    file:write(time .. "- Engine turned was on :" .. not status)
+    if status == true then
+        engineStatus = "true"
+    else
+        engineStatus = "false"
+    end
+    file:write(time .. "- Engine turned was on :" .. engineStatus)
     file:close()
 end
 
-status = rs.getOutput("back") --Change to appropiate side of computer
+ status = rs.getOutput("back") --Change to appropiate side of computer
 
 term.clear()
 term.setCursorPos(1, 1)
@@ -50,7 +55,7 @@ if input ~= "log" then
     term.setTextColor( colors.yellow )
 
 else
-    log(textutils.formatTime(os.time(ingame)), not rs.getOutput("back"))
+    log(textutils.formatTime(os.time(ingame)), not status)
 
     print("Returning to menu")
     sleep(5)
