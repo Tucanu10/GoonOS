@@ -8,7 +8,7 @@ function log(time, status)
     else
         engineStatus = "false"
     end
-    file:write(time .. "- Engine turned was on :" .. engineStatus)
+    file:write(time .. "- Engine turned was on: " .. engineStatus)
     file:close()
 end
 
@@ -29,7 +29,6 @@ term.setTextColor( colors.white )
 
 input = read()
 
-
 if input ~= "log" then
     if status == false then
         print("Stopping the engine")
@@ -37,6 +36,7 @@ if input ~= "log" then
         print("Firing up the engine")
     end
 
+    log(textutils.formatTime(os.time(ingame)), not status)
     sleep(5)
 
     rs.setOutput("back", not status)    --Change to appropiate side of computer
@@ -55,10 +55,28 @@ if input ~= "log" then
     term.setTextColor( colors.yellow )
 
 else
-    log(textutils.formatTime(os.time(ingame)), not status)
+    term.clear()
+    term.setCursorPos(1, 1)
+    term.setTextColor( colors.white )
 
+    data = fs.open("/GoonOS/logs.txt")
+    textutils.slowPrint(data)
+
+    print("")
+    print("To return to the menu press 'enter'")
+    while true do
+        key = os.pullEvent("key_up")
+        name = keys.getName(key) or "unknown key"
+        if name == "enter" then
+            print("Returning to menu")
+            sleep(5)
+            os.run({}, "/GoonOS/menu")
+        end
+    end
+    
+    
     print("Returning to menu")
-    sleep(5)
-    os.run({}, "/GoonOS/menu")
+            sleep(5)
+            os.run({}, "/GoonOS/menu")
 end
     
