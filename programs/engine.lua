@@ -6,9 +6,9 @@ if not fs.exists("/GoonOS/logs.txt") then
 end
 
 function log(time, status)
-    file = fs.open("/GoonOS/logs.txt", "a")
-    file.write(time .. "- Engine turned was on :" .. not status)
-    file.close()
+    file = assert(io.open("/GoonOS/logs.txt", "a"))
+    file:write(time .. "- Engine turned was on :" .. not status)
+    file:close()
 end
 
 status = rs.getOutput("back") --Change to appropiate side of computer
@@ -54,7 +54,7 @@ if input ~= "log" then
     term.setTextColor( colors.yellow )
 
 else
-    log(textutils.formatTime(os.time(ingame)), rs.getOutput("back"))
+    log(textutils.formatTime(os.time(ingame)), not rs.getOutput("back"))
 
     print("Returning to menu")
     sleep(5)
