@@ -8,7 +8,8 @@ function log(time, status)
     else
         engineStatus = "false"
     end
-    file:write(time .. " - Engine turned was on: " .. engineStatus)
+    file:write(time .. " - Engine was turned on: " .. engineStatus .. "\n")
+    file.newline()
     file:close()
 end
 
@@ -41,19 +42,19 @@ if input ~= "log" or input ~="dellog" then
         print("Firing up the engine")
     end
 
-    log(textutils.formatTime(os.time(ingame)), not status)
+    log(textutils.formatTime(os.time(utc)), not status)
     sleep(5)
 
     rs.setOutput("back", not status)    --Change to appropiate side of computer
 
-    term.write(textutils.formatTime(os.time(ingame), true))
+    term.write(textutils.formatTime(os.time(utc), true))
     term.write(" : ")
 
     if status == false then
         term.setTextColor( colors.red )
         print("The engine has stopped")
     else
-        term.setTextColor( colors.green) 
+        term.setTextColor( colors.green )
         print("The engine has started!")
     end
 
@@ -64,7 +65,7 @@ elseif input ~= "dellog" then
 
     file = assert(io.open("/GoonOS/logs.txt", "r"))
     data = file:read()
-    textutils.slowPrint(data)
+    print(data)
 
 else
     print("Logs have been deleted")
