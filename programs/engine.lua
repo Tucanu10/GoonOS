@@ -81,7 +81,7 @@ while true do
 
     elseif name == "enter" then
         term.setTextColor( colors.white )
-        input = read()
+        os.run({}, "/GoonOS/engine")
         break
     end
 end
