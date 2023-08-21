@@ -9,7 +9,6 @@ function log(time, status)
         engineStatus = "false"
     end
     file:write(time .. " - Engine turned was on: " .. engineStatus)
-    file:seek("cur", 1)
     file:close()
 end
 
@@ -24,8 +23,9 @@ term.setTextColor( colors.white )
 print("Engine commands :")
 print("")
 term.setTextColor( colors.lime )
-print("log - see the engine's activity")
 print("press enter - start / stop the engine")
+print("log - see the engine's activity")
+print("dellog - deletes the engine logs")
 print("")
 
 term.setTextColor( colors.yellow )
@@ -59,7 +59,7 @@ if input ~= "log" then
 
     term.setTextColor( colors.yellow )
 
-else
+elseif input ~= "dellogs" then
     term.clear()
     term.setCursorPos(1, 1)
     term.setTextColor( colors.white )
@@ -67,21 +67,24 @@ else
     file = assert(io.open("/GoonOS/logs.txt", "r"))
     data = file:read()
     textutils.slowPrint(data)
+else
+    print("Logs have been deleted")
+    os.run("delete /GoonOS/logs.txt")
 end
 
 print("")
-print("To return to the menu press 'm' or continue inputting by pressing enter")
+print("To return to the menu press 'enter' or continue inputting by pressing any other key")
 while true do
     event, key = os.pullEvent("key_up")
     name = keys.getName(key) or "unknown key"
-    if name == "m" then
+    if name == "enter" then
         term.setTextColor( colors.yellow )
         print("Returning to menu")
         sleep(5)
         os.run({}, "/GoonOS/menu")
         break
 
-    elseif name == "enter" then
+    else
         os.run({}, "/GoonOS/engine")
         break
     end
