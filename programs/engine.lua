@@ -73,11 +73,11 @@ end
 
 term.setTextColor( colors.yellow )
 print("")
-print("To return to the menu press 'enter' or continue inputting by pressing any other key")
+print("Press ENTER to continue inputting or any other key to return to the menu")
 while true do
     event, key = os.pullEvent("key")
     name = keys.getName(key) or "unknown key"
-    if name == "enter" then
+    if name ~= "enter" then
         term.setTextColor( colors.yellow )
         print("Returning to menu")
         sleep(5)
