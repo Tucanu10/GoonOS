@@ -20,11 +20,13 @@ print("update - updates GoonOS")
 print("")
 print("uninstall - uninstalls GoonOS")
 print("")
-print("press enter - allows you to use the computer normally")
+print("press enter - use the computer as intended")
 print("")
 
 term.setTextColor( colors.yellow )
 write("> ")
+
+term.setTextColor( colors.white )
 input = read()
 
 if input == "engine" then
@@ -35,4 +37,7 @@ elseif input == "update" then
     os.run({}, "/GoonOS/update")
 elseif input == "uninstall" then
     os.run({}, "/GoonOS/uninstall")
+else
+    term.clear()
+    term.setCursorPos(1, 1)
 end
