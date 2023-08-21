@@ -30,6 +30,7 @@ end
 if access == true then
   print("Logging in...")
   sleep(1)
+  print("")
   write("Welcome, ")
   term.setTextColor( colors.lime )
   write(user)
