@@ -18,7 +18,6 @@ print("Do you wish to proceed wtih updating GoonOS? y/n")
 input = read()
 
 if input == "y" then
-    term.setTextColor( colors.lime)
     if (fs.exists("startup")) then
         fs.delete("startup")
     end

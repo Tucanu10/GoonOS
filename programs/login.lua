@@ -11,10 +11,15 @@ username = {"admin", "user2", "user3"}
 password = {"admin", "", ""}
 
 write("Username: ")
+term.setTextColor( colors.green )
 user = read()
 
+term.setTextColor( colors.white )
 write("Password: ")
+term.setTextColor( colors.green )
 pass = read('*')
+
+term.setTextColor( colors.white )
 
 for i=1, #username do
  if user == username[i] and pass == password[i] then
@@ -25,7 +30,9 @@ end
 if access == true then
   print("Logging in...")
   sleep(1)
-  print("Welcome "..user)
+  write("Welcome, ")
+  term.setTextColor( colors.lime )
+  writeLine(user)
   sleep(2)
 else
   print("Incorrect username and password combination")
