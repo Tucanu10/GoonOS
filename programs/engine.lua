@@ -26,6 +26,7 @@ term.setTextColor( colors.lime )
 print("press enter - start / stop the engine")
 print("log - see the engine's activity")
 print("dellog - deletes the engine logs")
+print("menu - return to menu")
 print("")
 
 term.setTextColor( colors.yellow )
@@ -79,20 +80,27 @@ elseif input == "dellog" then
     fs.delete("/GoonOS/logs.txt")
 end
 
-term.setTextColor( colors.yellow )
-print("")
-print("Press ENTER to continue inputting or any other key to return to the menu")
-while true do
-    event, key = os.pullEvent("key")
-    name = keys.getName(key) or "unknown key"
-    if name ~= "enter" then
-        term.setTextColor( colors.yellow )
-        print("Returning to menu")
-        sleep(5)
-        os.run({}, "/GoonOS/menu")
-        break
-    else
-        os.run({}, "/GoonOS/engine")
-        break
+if input ~= "menu" then
+    term.setTextColor( colors.yellow )
+    print("")
+    print("Press ENTER to continue inputting or any other key to return to the menu")
+    while true do
+        event, key = os.pullEvent("key")
+        name = keys.getName(key) or "unknown key"
+        if name ~= "enter" then
+            term.setTextColor( colors.yellow )
+            print("Returning to menu")
+            sleep(5)
+            os.run({}, "/GoonOS/menu")
+            break
+        else
+            os.run({}, "/GoonOS/engine")
+            break
+        end
     end
+else
+    term.setTextColor( colors.yellow )
+    print("Returning to menu")
+    sleep(5)
+    os.run({}, "/GoonOS/menu")
 end
