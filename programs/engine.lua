@@ -77,7 +77,7 @@ elseif input == "log" then
     end
 else
     print("Logs have been deleted")
-    shell.run("delete", "/GoonOS/logs.txt")
+    fs.delete("/GoonOS/logs.txt")
 end
 
 term.setTextColor( colors.yellow )
