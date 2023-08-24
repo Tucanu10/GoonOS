@@ -14,19 +14,20 @@ if input == "y" then
         write(".")
     end
     
-    if(fs.exists("/GoonOS"))then
-        fs.delete("/GoonOS")
-    end
+    fs.delete("/GoonOS")
+    fs.delete("startup")
+    fs.delete("installer")
 
-    if(fs.exists("startup"))then
-        fs.delete("startup")
-    end
     print("")
     term.setTextColor( colors.lime)
-    print("Uninstall complete.")
+    print("Uninstall complete \n")
     sleep(1)
-    print("Rebooting.")
+    write("Rebooting")
     sleep(1)
+    for i = 1, 3, 1 do
+        write(".")
+        sleep(0.5)
+    end
     os.reboot()
 else
     os.run({}, "/GoonOS/menu")
