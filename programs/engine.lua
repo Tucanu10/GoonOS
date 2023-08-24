@@ -2,7 +2,7 @@
 -- Written by Tucanu
 
 function log(time, status)
-    file = assert(io.open("/GoonOS/logs.txt", "a+"))
+    file = assert(io.open("/GoonOS/logs.txt", "a"))
     if status == true then
         engineStatus = "true"
     else
@@ -63,9 +63,9 @@ elseif input == "log" then
     term.setTextColor( colors.white )
 
     if fs.exists("/GoonOS/logs.txt") then
-        file = assert(io.open("/GoonOS/logs.txt", "r"))
-        data = file:read()
-        print(data)
+        for line in io.lines("/GoonOS/logs.txt") do
+            print(line)
+        end
     else
         print("There are no logs to show")
         print("")
