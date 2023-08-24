@@ -74,7 +74,7 @@ elseif input == "log" then
         sleep(5)
         os.run({}, "/GoonOS/menu")
     end
-else
+elseif input == "dellog" then
     print("Logs have been deleted")
     fs.delete("/GoonOS/logs.txt")
 end
