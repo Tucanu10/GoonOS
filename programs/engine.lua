@@ -8,7 +8,7 @@ function log(time, status)
     else
         engineStatus = "false"
     end
-    file:write(time .. " - Engine was turned on: " .. engineStatus .. "\n")
+    file:write(time .. " - Engine was on: " .. engineStatus .. "\n")
     file:close()
 end
 
