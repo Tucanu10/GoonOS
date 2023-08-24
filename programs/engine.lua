@@ -89,8 +89,9 @@ if input ~= "menu" then
         name = keys.getName(key) or "unknown key"
         if name ~= "enter" then
             term.setTextColor( colors.yellow )
+            sleep(1)
             print("Returning to menu")
-            sleep(5)
+            sleep(4)
             os.run({}, "/GoonOS/menu")
             break
         else
