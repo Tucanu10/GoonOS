@@ -70,10 +70,6 @@ elseif input == "log" then
     else
         print("There are no logs to show")
         print("")
-        term.setTextColor( colors.yellow )
-        print("Returning to menu")
-        sleep(5)
-        os.run({}, "/GoonOS/menu")
     end
 elseif input == "dellog" then
     print("Logs have been deleted")
