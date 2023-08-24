@@ -41,7 +41,7 @@ if input == "" then
         print("Firing up the engine")
     end
 
-    log(textutils.formatTime(os.time(utc)), not status)
+    log(textutils.formatTime(os.time(utc)), status)
     sleep(5)
 
     rs.setOutput("back", not status)    --Change to appropiate side of computer
@@ -62,13 +62,21 @@ elseif input == "log" then
     term.setCursorPos(1, 1)
     term.setTextColor( colors.white )
 
-    file = assert(io.open("/GoonOS/logs.txt", "r"))
-    data = file:read()
-    print(data)
-
+    if fs.exists("/GoonOS/logs.txt") then
+        file = assert(io.open("/GoonOS/logs.txt", "r"))
+        data = file:read()
+        print(data)
+    else
+        print("There are no logs to show")
+        print("")
+        term.setTextColor( colors.yellow )
+        print("Returning to menu")
+        sleep(5)
+        os.run({}, "/GoonOS/menu")
+    end
 else
     print("Logs have been deleted")
-    shell.run("delete /GoonOS/logs.txt")
+    shell.run("delete", "/GoonOS/logs.txt")
 end
 
 term.setTextColor( colors.yellow )
