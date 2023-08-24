@@ -41,12 +41,13 @@ if input == "" then
         print("Firing up the engine")
     end
 
-    log(textutils.formatTime(os.time(utc)), status)
+    time =textutils.formatTime(os.day(ingame), true) .. textutils.formatTime(os.time(ingame), true)
+    log(time , status)
     sleep(5)
 
     rs.setOutput("back", not status)    --Change to appropiate side of computer
 
-    term.write(textutils.formatTime(os.time(utc), true))
+    term.write(textutils.formatTime(os.time(ingame), true))
     term.write(" : ")
 
     if status == false then
