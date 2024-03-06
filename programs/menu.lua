@@ -7,7 +7,7 @@ term.clear()
 term.setCursorPos(1, 1)
 term.setTextColor( colors.yellow )
 
-write("Welcome to GoonOS, here is a quick list of commands:")
+write("Welcome to GoonOS! \nHere are the commands:")
 write("\n")
 
 term.setTextColor( colors.green )
