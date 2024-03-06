@@ -22,13 +22,13 @@ term.setCursorPos(1, 1)
 term.setTextColor( colors.white )
 
 write("Engine commands :")
-write("")
+write("\n")
 term.setTextColor( colors.lime )
-write("press enter - start / stop")
-write("log - see engine's activity")
-write("dellog - deletes the logs")
-write("menu - return to menu")
-write("")
+write("press enter - start / stop \n")
+write("log - see engine's activity \n")
+write("dellog - deletes the logs \n")
+write("menu - return to menu \n")
+write("\n")
 
 term.setTextColor( colors.yellow )
 write("> ")
@@ -38,9 +38,9 @@ input = read()
 
 if input == "" then
     if status == false then
-        write("Stopping the engine")
+        write("Stopping the engine \n")
     else
-        write("Firing up the engine")
+        write("Firing up the engine \n")
     end
 
     log(os.date() , status)
@@ -53,10 +53,10 @@ if input == "" then
 
     if status == false then
         term.setTextColor( colors.red )
-        write("The engine has stopped")
+        write("The engine has stopped! \n")
     else
         term.setTextColor( colors.green )
-        write("The engine has started!")
+        write("The engine has started! \n")
     end
 
 elseif input == "log" then
@@ -70,24 +70,24 @@ elseif input == "log" then
         end
     else
         write("There are no logs to show")
-        write("")
+        write("\n")
     end
 elseif input == "dellog" then
-    write("Logs have been deleted")
+    write("Logs have been deleted \n")
     fs.delete("/GoonOS/logs.txt")
 end
 
 if input ~= "menu" then
     term.setTextColor( colors.yellow )
     write("")
-    write("Press ENTER to continue or return to the menu")
+    write("Press ENTER to continue or return to the menu \n")
     while true do
         event, key = os.pullEvent("key")
         name = keys.getName(key) or "unknown key"
         if name ~= "enter" then
             term.setTextColor( colors.yellow )
             sleep(1)
-            write("Returning to menu")
+            write("Returning to menu \n")
             sleep(4)
             os.run({}, "/GoonOS/menu")
             break
@@ -98,7 +98,7 @@ if input ~= "menu" then
     end
 else
     term.setTextColor( colors.yellow )
-    write("Returning to menu")
+    write("Returning to menu \n")
     sleep(5)
     os.run({}, "/GoonOS/menu")
 end

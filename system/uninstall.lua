@@ -7,11 +7,11 @@ term.clear()
 term.setCursorPos(1, 1)
 term.setTextColor( colors.white )
 
-write("Do you wish to uninstall GoonOS? y/n")
+write("Do you wish to uninstall GoonOS? y/n \n")
 
 input = read()
 if input == "y" then
-    write("")
+    write("\n")
     term.setTextColor( colors.red)
     write("Uninstalling GoonOS")
     for i = 1, 3, 1 do
@@ -23,7 +23,7 @@ if input == "y" then
     fs.delete("startup")
     fs.delete("mirror")
 
-    write("")
+    write("\n")
     term.setTextColor( colors.lime)
     write("Uninstall complete \n")
     sleep(1)

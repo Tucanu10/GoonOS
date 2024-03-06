@@ -40,9 +40,9 @@ download("/GoonOS/uninstall", "https://raw.githubusercontent.com/Tucanu10/GoonOS
 download("mirror", "https://pastebin.com/K9813zBz")
 
 term.setTextColor(colors.green)
-write("GoonOS succesfully installed!")
+write("GoonOS succesfully installed! \n")
 sleep(1)
-write("Restarting...")
+write("Restarting... \n")
 
 sleep(1)
 os.reboot()

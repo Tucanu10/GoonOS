@@ -4,7 +4,7 @@
 os.pullEvent = os.pullEventRaw
 
 function download(path, url)
-    print("Downloading : " .. path)
+    write("Downloading : " .. path)
     data = http.get(url).readAll()
     file = assert(io.open(path, "w"))
     file:write(data)
@@ -15,12 +15,11 @@ term.clear()
 term.setCursorPos(1,1)
 term.setTextColor( colors.white )
 
-print("Do you wish to proceed wtih updating GoonOS? y/n")
+write("Do you wish to proceed wtih updating GoonOS? y/n \n")
 
 input = read()
 
 if input == "y" then
-    print("")
     term.setTextColor( colors.lime)
     if (fs.exists("startup")) then
         fs.delete("startup")

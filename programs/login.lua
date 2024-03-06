@@ -19,6 +19,7 @@ write("Username: ")
 term.setTextColor( colors.green )
 user = read()
 
+write("\n")
 term.setTextColor( colors.white )
 write("Password: ")
 term.setTextColor( colors.green )
@@ -35,9 +36,9 @@ end
 write("")
 if access == true then
   
-  write("Logging in...")
+  write("Logging in ...")
   sleep(1)
-  write("")
+  write("\n")
   write("Welcome, ")
   term.setTextColor( colors.lime )
   write(user)
@@ -46,7 +47,7 @@ if access == true then
 else
   
   term.setTextColor( colors.red )
-  write("Incorrect username and password combination")
+  write("Incorrect username and password combination \n")
   sleep(2)
   os.reboot()
 
