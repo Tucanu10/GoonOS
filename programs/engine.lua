@@ -24,9 +24,9 @@ term.setTextColor( colors.white )
 write("Engine commands :")
 write("")
 term.setTextColor( colors.lime )
-write("press enter - start / stop the engine")
-write("log - see the engine's activity")
-write("dellog - deletes the engine logs")
+write("press enter - start / stop")
+write("log - see engine's activity")
+write("dellog - deletes the logs")
 write("menu - return to menu")
 write("")
 
@@ -80,7 +80,7 @@ end
 if input ~= "menu" then
     term.setTextColor( colors.yellow )
     write("")
-    write("Press ENTER to continue inputting or any other key to return to the menu")
+    write("Press ENTER to continue or return to the menu")
     while true do
         event, key = os.pullEvent("key")
         name = keys.getName(key) or "unknown key"

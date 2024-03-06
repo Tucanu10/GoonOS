@@ -14,13 +14,13 @@ term.setTextColor( colors.green )
 
 write("engine - maintains a redstone signal on prefered side of the computer")
 write("")
-write("goodbye - shuts down the computer")
+write("shutdown")
 write("")
-write("update - updates GoonOS")
+write("update")
 write("")
-write("uninstall - uninstalls GoonOS")
+write("uninstall")
 write("")
-write("press enter - use the computer as intended")
+write("press enter - use the computer normally")
 write("")
 
 term.setTextColor( colors.yellow )
@@ -31,7 +31,7 @@ input = read()
 
 if input == "engine" then
     os.run({}, "/GoonOS/engine")
-elseif input == "goodbye" then
+elseif input == "shutdown" then
     os.shutdown()
 elseif input == "update" then
     os.run({}, "/GoonOS/update")
