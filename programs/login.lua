@@ -18,8 +18,6 @@ os.run({}, "mirror ", monSide .. " startup")
 write("Username: ")
 term.setTextColor( colors.green )
 user = read()
-
-write("\n")
 term.setTextColor( colors.white )
 write("Password: ")
 term.setTextColor( colors.green )
@@ -33,7 +31,7 @@ for i=1, #username do
  end
 end
 
-write("")
+write("\n")
 if access == true then
   
   write("Logging in ...")

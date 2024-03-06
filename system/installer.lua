@@ -6,7 +6,7 @@ os.pullEvent = os.pullEventRaw
 term.setTextColor(colors.lime)
 
 function download(path, url)
-    write("Downloading : " .. path)
+    write("Downloading : " .. path .. "\n")
     data = http.get(url).readAll()
     file = assert(io.open(path, "w"))
     file:write(data)
@@ -37,7 +37,7 @@ download("/GoonOS/update", "https://raw.githubusercontent.com/Tucanu10/GoonOS/ma
 download("/GoonOS/uninstall", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/system/uninstall.lua")
 
 -- [Utility] Monitor Mirroring, by lurquhar1221
-download("mirror", "https://pastebin.com/K9813zBz")
+download("mirror", "https://pastebin.com/raw/K9813zBz")
 
 term.setTextColor(colors.green)
 write("GoonOS succesfully installed! \n")
