@@ -1,6 +1,8 @@
 -- GoonOS Updater
 -- Written by Tucanu
 
+os.pullEvent = os.pullEventRaw
+
 function download(path, url)
     print("Downloading : " .. path)
     data = http.get(url).readAll()
@@ -24,11 +26,11 @@ if input == "y" then
         fs.delete("startup")
     end
 
-    if (fs.exists("installer")) then
-        fs.delete("installer")
+    if (fs.exists("mirror")) then
+        fs.delete("mirror")
     end
-    download("/installer", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/system/installer.lua")
-    os.run({}, "/installer")
+    download("startup", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/system/installer.lua")
+    os.run({}, "/startup")
 else
     os.run({}, "/GoonOS/menu")
 end

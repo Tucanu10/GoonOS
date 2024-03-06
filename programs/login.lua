@@ -1,14 +1,19 @@
 -- Login System
 -- Written by Tucanu
 
+username = {"", "", ""}
+password = {"", "", ""}
+
+-- Set up your own users
+
 os.pullEvent = os.pullEventRaw
 
 term.clear()
 term.setCursorPos(1, 1)
 term.setTextColor( colors.white )
 
-username = {"admin", "user2", "user3"}
-password = {"admin", "", ""}
+monSide = "left" --Change to appropiate side of computer
+os.run({}, "mirror " .. monSide .. " startup")
 
 write("Username: ")
 term.setTextColor( colors.green )
@@ -27,19 +32,24 @@ for i=1, #username do
  end
 end
 
+write("")
 if access == true then
-  print("Logging in...")
+  
+  write("Logging in...")
   sleep(1)
-  print("")
+  write("")
   write("Welcome, ")
   term.setTextColor( colors.lime )
   write(user)
   sleep(2)
+
 else
+  
   term.setTextColor( colors.red )
-  print("Incorrect username and password combination")
+  write("Incorrect username and password combination")
   sleep(2)
   os.reboot()
+
 end
 
 os.run({}, "/GoonOS/menu")

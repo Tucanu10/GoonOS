@@ -1,27 +1,27 @@
 -- Computer Menu
 -- Written by Tucanu
 
+os.pullEvent = os.pullEventRaw
+
 term.clear()
 term.setCursorPos(1, 1)
 term.setTextColor( colors.yellow )
 
-print("Please run the update script on first installation of GoonOS")
-print("")
-print("Welcome to GoonOS, here is a quick list of commands:")
-print("")
+write("Welcome to GoonOS, here is a quick list of commands:")
+write("")
 
 term.setTextColor( colors.green )
 
-print("engine - maintains a redstone signal on prefered side of the computer")
-print("")
-print("goodbye - shuts down the computer")
-print("")
-print("update - updates GoonOS")
-print("")
-print("uninstall - uninstalls GoonOS")
-print("")
-print("press enter - use the computer as intended")
-print("")
+write("engine - maintains a redstone signal on prefered side of the computer")
+write("")
+write("goodbye - shuts down the computer")
+write("")
+write("update - updates GoonOS")
+write("")
+write("uninstall - uninstalls GoonOS")
+write("")
+write("press enter - use the computer as intended")
+write("")
 
 term.setTextColor( colors.yellow )
 write("> ")

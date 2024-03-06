@@ -1,10 +1,12 @@
 -- File Installer
 -- Written by Tucanu
 
-term.setTextColor( colors.lime)
+os.pullEvent = os.pullEventRaw
+
+term.setTextColor(colors.lime)
 
 function download(path, url)
-    print("Downloading : " .. path)
+    write("Downloading : " .. path)
     data = http.get(url).readAll()
     file = assert(io.open(path, "w"))
     file:write(data)
@@ -19,25 +21,28 @@ end
 
 fs.makeDir("/GoonOS")
 
+-- Login Screen
+download("/startup", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/programs/login.lua")
+
 -- Main Menu
 download("/GoonOS/menu", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/programs/menu.lua")
 
 -- Engine Startup & Logger
 download("/GoonOS/engine", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/programs/engine.lua")
 
--- Login Screen
-download("/startup", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/programs/login.lua")
-
--- GoonOS Updater
+-- Update
 download("/GoonOS/update", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/system/update.lua")
 
--- GoonOS Uninstaller
+-- Uninstall
 download("/GoonOS/uninstall", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/system/uninstall.lua")
 
+-- [Utility] Monitor Mirroring, by lurquhar1221
+download("mirror", "https://pastebin.com/K9813zBz")
+
 term.setTextColor(colors.green)
-print("GoonOS succesfully installed!")
+write("GoonOS succesfully installed!")
 sleep(1)
-print("Restarting...")
+write("Restarting...")
 
 sleep(1)
 os.reboot()
