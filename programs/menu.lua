@@ -14,6 +14,8 @@ term.setTextColor( colors.green )
 
 write("engine - maintains a redstone signal on prefered side of the computer")
 write("\n")
+write("monitor - finds nearest monitor and projects screen onto it")
+write("\n")
 write("shutdown")
 write("\n")
 write("update")

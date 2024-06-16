@@ -12,9 +12,6 @@ term.clear()
 term.setCursorPos(1, 1)
 term.setTextColor( colors.white )
 
-monSide = "left" --Change to appropiate side of computer
-os.run({}, "/mirror ", monSide .. " startup")
-
 write("Username: ")
 term.setTextColor( colors.green )
 user = read()

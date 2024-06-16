@@ -24,10 +24,6 @@ if input == "y" then
     if (fs.exists("startup")) then
         fs.delete("startup")
     end
-
-    if (fs.exists("mirror")) then
-        fs.delete("mirror")
-    end
     download("startup", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/system/installer.lua")
     os.run({}, "/startup")
 else

@@ -21,6 +21,9 @@ end
 
 fs.makeDir("/GoonOS")
 
+-- Screen Projector
+download("/GoonOS/project", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/programs/project.lua")
+
 -- Login Screen
 download("/startup", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/programs/login.lua")
 
@@ -36,13 +39,15 @@ download("/GoonOS/update", "https://raw.githubusercontent.com/Tucanu10/GoonOS/ma
 -- Uninstall
 download("/GoonOS/uninstall", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/system/uninstall.lua")
 
--- [Utility] Monitor Mirroring, by lurquhar1221
-download("mirror", "https://pastebin.com/raw/K9813zBz")
-
 term.setTextColor(colors.green)
 write("GoonOS succesfully installed! \n")
 sleep(1)
-write("Restarting... \n")
+write("Rebooting")
+sleep(1)
+for i = 1, 3, 1 do
+    write(".")
+    sleep(0.5)
+end
 
 sleep(1)
 os.reboot()

@@ -21,7 +21,6 @@ if input == "y" then
     
     fs.delete("/GoonOS")
     fs.delete("startup")
-    fs.delete("mirror")
 
     write("\n")
     term.setTextColor( colors.lime)
