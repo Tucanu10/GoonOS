@@ -22,7 +22,7 @@ end
 fs.makeDir("/GoonOS")
 
 -- Screen Projector
-download("/GoonOS/project", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/programs/project.lua")
+download("/GoonOS/project", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/system/project.lua")
 
 -- Login Screen
 download("/startup", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/programs/login.lua")
