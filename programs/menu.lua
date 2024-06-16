@@ -41,6 +41,7 @@ local function handleInput(input)
 end
 
 printMenu()
+
 term.setTextColor(colors.yellow)
 write("> ")
 term.setTextColor(colors.white)

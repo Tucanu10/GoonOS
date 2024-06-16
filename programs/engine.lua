@@ -66,17 +66,20 @@ local function main()
     
     printEngineCommands()
     
+    term.setTextColor(colors.yellow)
     write("> ")
-    
+
+    term.setTextColor(colors.white)
+
     local input = read()
     
     if input == "" then
         toggleEngine()
         sleep(5)
-        print(textutils.formatTime(os.time("local"), true) .. " : " .. (rs.getOutput(ENGINE_SIDE) and "The engine has started!" or "The engine has stopped!"))
+        print(textutils.formatTime(os.time("utc"), true) .. " : " .. (rs.getOutput(ENGINE_SIDE) and "The engine has started!" or "The engine has stopped!"))
         
         write("\nPress ENTER to continue or return to the menu\n")
-        local event, key = os.pullEvent("key")
+        local key = os.pullEvent("key")
         
         if keys.getName(key) ~= "enter" then
             print("Returning to menu\n")
