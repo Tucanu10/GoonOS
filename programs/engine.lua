@@ -5,7 +5,7 @@
 os.pullEvent = os.pullEventRaw
 
 -- Constants
-local LOG_FILE_PATH = "/GoonOS/logs.txt"
+local LOG_FILE_PATH = "/logs.txt"
 local ENGINE_SIDE = "back" -- Change to the appropriate side of the computer
 
 -- Function to log engine status
@@ -73,7 +73,7 @@ local function main()
 
     if input == "" then
         toggleEngine()
-        local newStatus = rs.getOutput(ENGINE_SIDE) and "§astarted" or "§cstopped"
+        local newStatus = rs.getOutput(ENGINE_SIDE) and "started" or "stopped"
         print("The engine has " .. newStatus .. "!\n")
     elseif input == "log" then
         term.setTextColor(colors.white)

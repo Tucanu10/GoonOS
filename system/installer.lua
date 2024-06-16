@@ -22,6 +22,15 @@ local function download(name, path, url)
     end
 end
 
+local function silentDownload(path, url)
+    local data = http.get(url).readAll()
+    if data then
+        local file = assert(io.open(path, "w"))
+        file:write(data)
+        file:close()
+    end
+end
+
 -- Clear computer of old version of GoonOS
 fs.delete("startup")
 fs.makeDir("/GoonOS")
@@ -38,6 +47,7 @@ local files = {
 for _, file in ipairs(files) do
     download(unpack(file))
 end
+silentDownload("/login.txt", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/login.txt")
 
 term.setTextColor(colors.green)
 write("GoonOS successfully installed! \nRebooting")

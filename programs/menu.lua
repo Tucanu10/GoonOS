@@ -26,7 +26,8 @@ local function handleInput(input)
     local paths = {
         engine = "/GoonOS/engine",
         update = "/GoonOS/update",
-        uninstall = "/GoonOS/uninstall"
+        uninstall = "/GoonOS/uninstall",
+        default = "/shell"
     }
     
     if paths[input] then
