@@ -19,6 +19,7 @@ local function mirrorToMonitor()
     local monitor = peripheral.find("monitor")
     if monitor then
         local monitorTerm = peripheral.wrap(peripheral.getName(monitor))
+        term.setTextColor( colors.red )
         print("Mirroring screen to the monitor on side: " .. peripheral.getName(monitor) .. "\n\n")
         sleep(REBOOT_DELAY)
         
@@ -27,7 +28,9 @@ local function mirrorToMonitor()
         monitorTerm.setCursorPos(1, 1)
         monitorTerm.setTextScale(TEXT_SCALE)
     else
+        term.setTextColor( colors.red )
         print("No monitors found, using terminal only.\n\n")
+        sleep(REBOOT_DELAY)
     end
 end
 

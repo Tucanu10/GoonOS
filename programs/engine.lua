@@ -12,7 +12,7 @@ local ENGINE_SIDE = "back" -- Change to the appropriate side of the computer
 local function logEngineStatus(status)
     local file = assert(io.open(LOG_FILE_PATH, "a"))
     local engineStatus = status and "On" or "Off"
-    file:write(os.date() .. " : " .. engineStatus .. "\n")
+    file:write("§e" .. os.date() .. "§f : " .. engineStatus .. "\n")
     file:close()
 end
 
@@ -73,9 +73,10 @@ local function main()
 
     if input == "" then
         toggleEngine()
-        local newStatus = rs.getOutput(ENGINE_SIDE) and "started" or "stopped"
+        local newStatus = rs.getOutput(ENGINE_SIDE) and "§astarted" or "§cstopped"
         print("The engine has " .. newStatus .. "!\n")
     elseif input == "log" then
+        term.setTextColor(colors.white)
         displayLogs()
     elseif input == "dellog" then
         deleteLogs()
