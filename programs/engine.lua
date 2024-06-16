@@ -1,24 +1,26 @@
 -- Engine starting / stopping script
 -- Written by Tucanu
 
+-- Override the default os.pullEvent with os.pullEventRaw for safety
+os.pullEvent = os.pullEventRaw
 
 -- Constants
 local LOG_FILE_PATH = "/GoonOS/logs.txt"
 local ENGINE_SIDE = "back" -- Change to the appropriate side of the computer
 
 -- Function to log engine status
-local function logEngineStatus(time, status)
+local function logEngineStatus(status)
     local file = assert(io.open(LOG_FILE_PATH, "a"))
     local engineStatus = status and "On" or "Off"
-    file:write(time .. " : " .. engineStatus .. "\n")
+    file:write(os.date() .. " : " .. engineStatus .. "\n")
     file:close()
 end
 
 -- Function to toggle engine status
 local function toggleEngine()
     local status = rs.getOutput(ENGINE_SIDE)
-    logEngineStatus(os.date(), status)
     rs.setOutput(ENGINE_SIDE, not status)
+    logEngineStatus(not status) -- Log after toggling status
 end
 
 -- Function to display logs
@@ -43,7 +45,7 @@ local function printEngineCommands()
     term.clear()
     term.setCursorPos(1, 1)
     term.setTextColor(colors.yellow)
-    write("Engine commands:\n")
+    print("Engine commands:")
     term.setTextColor(colors.green)
 
     local commands = {
@@ -52,55 +54,46 @@ local function printEngineCommands()
         "dellog - deletes the logs",
         "menu - return to menu"
     }
+    
     for _, command in ipairs(commands) do
-        write(command .. "\n")
+        print(command)
     end
-end
-
--- Main program
-local function main()
-    os.pullEvent = os.pullEventRaw -- Disable termination of program
-    
-    term.clear()
-    term.setCursorPos(1, 1)
-    
-    printEngineCommands()
     
     term.setTextColor(colors.yellow)
-    write("> ")
+    print("\n> ")
+end
 
-    term.setTextColor(colors.white)
+-- Main program loop
+local function main()
+    printEngineCommands()
 
     local input = read()
-    
+
     if input == "" then
         toggleEngine()
-        sleep(5)
-        print(textutils.formatTime(os.time("utc"), true) .. " : " .. (rs.getOutput(ENGINE_SIDE) and "The engine has started!" or "The engine has stopped!"))
-        
-        write("\nPress ENTER to continue or return to the menu\n")
-        local key = os.pullEvent("key")
-        
-        if keys.getName(key) ~= "enter" then
-            print("Returning to menu\n")
-            sleep(4)
-            os.run({}, "/GoonOS/menu")
-        else
-            os.run({}, "/GoonOS/engine")
-        end
-        
+        local newStatus = rs.getOutput(ENGINE_SIDE) and "started" or "stopped"
+        print("The engine has " .. newStatus .. "!\n")
     elseif input == "log" then
         displayLogs()
-        
     elseif input == "dellog" then
         deleteLogs()
-        
     elseif input == "menu" then
-        print("Returning to menu\n")
-        sleep(5)
         os.run({}, "/GoonOS/menu")
+        return -- Exit after running menu
+    end
+
+    -- Wait for user to press enter before continuing or returning to menu
+    print("Press ENTER to continue or return to the menu")
+    
+    while true do
+        local event, key = os.pullEvent("key")
         
+        if keys.getName(key) == "enter" then
+            main() -- Restart main loop if enter is pressed
+        else
+            os.run({}, "/GoonOS/menu") -- Return to menu otherwise
+        end
     end
 end
 
-main() -- Run the main program
+main() -- Start the program
