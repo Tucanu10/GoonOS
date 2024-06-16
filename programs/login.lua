@@ -2,17 +2,32 @@
 -- Written by Tucanu
 
 -- Constants
+local LOGININFO = "/login.txt"
 local TEXT_SCALE = 0.5
 local WELCOME_MESSAGE = "Welcome, "
 local LOGIN_FAIL_MESSAGE = "Incorrect username and password combination \n"
 local REBOOT_DELAY = 2
 
--- User credentials
-local credentials = {
-    ["admin"] = "",
-    [""] = "",
-    [""] = ""
-}
+-- Function to load credentials from a file
+local function loadCredentials()
+    local creds = {}
+    local file = io.open(LOGININFO, "r") -- Open the file for reading
+    if file then
+        for line in file:lines() do
+            local user, pass = string.match(line, "(%w+):(%w+)")
+            if user and pass then
+                creds[user] = pass
+            end
+        end
+        file:close()
+    else
+        print("Unable to open credentials file.")
+    end
+    return creds
+end
+
+-- User credentials loaded from a file
+local credentials = loadCredentials()
 
 -- Function to mirror to monitor
 local function mirrorToMonitor()
