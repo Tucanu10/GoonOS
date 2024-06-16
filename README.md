@@ -24,7 +24,7 @@ Password : admin
 ```
 Then you will be greeted with the main menu where you simply have to call the update function like so:
 
-<video controls src="Images/Update.mp4" title="Update Function"></video>
+[![Update Function](Images/UpdateThumbnail.jpg)](Images/Update.mp4 "Update Function")
 
 # Features 🌟
 ### Login System 🔐
