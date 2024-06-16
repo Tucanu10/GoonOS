@@ -26,6 +26,8 @@ end
 -- Function to display logs
 local function displayLogs()
     if fs.exists(LOG_FILE_PATH) then
+        term.clear()
+        term.setCursorPos(1, 1)
         for line in io.lines(LOG_FILE_PATH) do
             print(line)
         end
