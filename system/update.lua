@@ -4,7 +4,6 @@
 os.pullEvent = os.pullEventRaw
 
 function download(path, url)
-    write("Downloading : " .. path .. "\n")
     data = http.get(url).readAll()
     file = assert(io.open(path, "w"))
     file:write(data)

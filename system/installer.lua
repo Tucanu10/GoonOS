@@ -5,8 +5,8 @@ os.pullEvent = os.pullEventRaw
 
 term.setTextColor(colors.lime)
 
-function download(path, url)
-    write("Downloading : " .. path .. "\n")
+function download(name, path, url)
+    write("Downloading : " .. name.. "\n")
     data = http.get(url).readAll()
     file = assert(io.open(path, "w"))
     file:write(data)
@@ -22,19 +22,19 @@ end
 fs.makeDir("/GoonOS")
 
 -- Login Screen
-download("/startup", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/programs/login.lua")
+download("Login Screen","/startup", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/programs/login.lua")
 
 -- Main Menu
-download("/GoonOS/menu", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/programs/menu.lua")
+download("Main Menu", "/GoonOS/menu", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/programs/menu.lua")
 
 -- Engine Startup & Logger
-download("/GoonOS/engine", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/programs/engine.lua")
+download("Engine Startup & Logger ", "/GoonOS/engine", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/programs/engine.lua")
 
 -- Update
-download("/GoonOS/update", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/system/update.lua")
+download("Update", "/GoonOS/update", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/system/update.lua")
 
 -- Uninstall
-download("/GoonOS/uninstall", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/system/uninstall.lua")
+download("Uninstall", "/GoonOS/uninstall", "https://raw.githubusercontent.com/Tucanu10/GoonOS/main/system/uninstall.lua")
 
 term.setTextColor(colors.green)
 write("GoonOS succesfully installed! \n")
