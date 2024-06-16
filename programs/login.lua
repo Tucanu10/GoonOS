@@ -4,15 +4,19 @@
 -- Mirroring code
 
 local monitor = peripheral.find("monitor")
+local side = peripheral.getName(monitor)
+
 if monitor then
-    local monitorTerm = peripheral.wrap(peripheral.getName(monitor))
+    local monitorTerm = peripheral.wrap(side)
+    print("Mirroring screen to the monitor on side: " .. side.. "\n\n")
+    sleep(2)
+    
     term.redirect(monitorTerm)
     monitorTerm.clear()
     monitorTerm.setCursorPos(1, 1)
-    print("Mirroring screen to the monitor on side: " .. peripheral.getName(monitor).. "\n\n")
-    term.restore()
+    monitorTerm.setTextScale(0.5)
 else
-    print("No monitors found.\n\n")
+    print("No monitors found, using terminal only.\n\n")
 end
 
 -- Login System
